@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<table class="table table-striped">
+    <tr>
+        <th>name</th>
+        <th>organisation</th>
+        <th>email</th>
+        <th>phone</th>
+        <th>sourceoflead</th>
+    </tr>
+    {% for i in leads %}
+    <tr>
+        <td>{{i.lname}}</td>
+        <td>{{i.lorganisation}}</td>
+        <td>{{i.lemail}}</td>
+        <td>{{i.lphone}}</td>
+        <td>{{i.lsourceoflead}}</td>
+        <td>
+            <a href="edit_leads/{{ i.id }} ">Edit</a>
+        </td>
+        <td>
+            <a href="delete_leads/{{ i.id }} ">Delete</a>
+        </td>
+
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

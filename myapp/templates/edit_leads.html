@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form method="POST" action="/update_leads/{{ leads.id}}">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td><input type="text" name="lname" required value="{{ leads.lname }}"/></td>
+        </tr>
+        <tr>
+            <td><input type="text" name="lorganisation" required value="{{ leads.lorganisation }}"/></td>
+        </tr>
+        <tr>
+            <td><input type="email" name="lemail" required value="{{ leads.lemail }}"/></td>
+        </tr>
+        <tr>
+            <td><input type="text" name="lphone" required value="{{ leads.lphone }}"/></td>
+        </tr>
+        <tr>
+            <td><input type="text" name="lsourceoflead" required value="{{ leads.lsourceoflead }}"/></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">Update</button>
+            </td>
+        </tr>
+    </table>
+</form>
+{% endblock %}

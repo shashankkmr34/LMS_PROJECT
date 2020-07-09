@@ -1,13 +1,13 @@
 from django import forms
-from .models import sales
-from .models import leads
+from .models import Sales
+from .models import Leads
 
-class salesform(forms.ModelForm):
+class SalesForm(forms.ModelForm):
     class Meta:
-        model = sales
+        model = Sales
         fields = "__all__"
 
-class leadsform(forms.ModelForm):
+class LeadsForm(forms.ModelForm):
     class Meta:
-        model = leads
+        model = Leads
         fields = "__all__"

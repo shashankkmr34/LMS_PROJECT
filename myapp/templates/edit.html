@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form method="POST" action="/update/{{ sales.id }}">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td><input type="text" name="sid" required value="{{ sales.sid }}"/></td>
+        </tr>
+        <tr>
+            <td><input type="text" name="sfirstname" required value="{{ sales.sfirstname }}"/></td>
+        </tr>
+        <tr>
+            <td><input type="text" name="slastname" required value="{{ sales.slastname }}"/></td>
+        </tr>
+        <tr>
+            <td><input type="email" name="semail" required value="{{ sales.semail }}"/></td>
+        </tr>
+        <tr>
+            <td><input type="text" name="sphone" required value="{{ sales.sphone }}"/></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">Update</button>
+            </td>
+        </tr>
+    </table>
+</form>
+{% endblock %}
